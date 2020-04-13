@@ -1,0 +1,60 @@
+﻿<Window x:Class="Milestone1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Milestone1"
+        mc:Ignorable="d"
+        Title="Milestone1" Height="843.747" Width="1209.494">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="191*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="statelist" HorizontalAlignment="Left" Margin="82,38,0,0" VerticalAlignment="Top" Width="120" FontSize="14" SelectionChanged="statelist_SelectionChanged" Height="24"/>
+        <Label Content="States" HorizontalAlignment="Left" Margin="30,34,0,0" VerticalAlignment="Top" FontSize="14" Height="28" Width="47"/>
+        <DataGrid x:Name="businessGrid" HorizontalAlignment="Left" Height="290" Margin="68,34,0,0" VerticalAlignment="Top" Width="588" Grid.Column="1" SelectedCellsChanged="BusinessGrid_SelectedCellsChanged"/>
+        <Label Content="Cities" HorizontalAlignment="Left" Margin="30,83,0,0" VerticalAlignment="Top" FontSize="14" Height="26" Width="38"/>
+        <ComboBox x:Name="citylist" Margin="39,114,0,0" VerticalAlignment="Top" FontSize="14" SelectionChanged="city_selectonChanged" Height="26" HorizontalAlignment="Left" Width="163"/>
+        <Label Content="Zip Code" HorizontalAlignment="Left" Margin="30,236,0,0" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="0.233,2.038" Height="26" Width="104"/>
+        <ListBox x:Name="zipcodebox" HorizontalAlignment="Left" Height="74" Margin="30,267,0,0" SelectionChanged="zipcode_selectionChanged" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Business Category" HorizontalAlignment="Left" FontSize="14" Margin="30,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.592,-0.615" Height="29" Width="122"/>
+        <ListBox x:Name="businesscat" HorizontalAlignment="Left" Height="242" SelectionChanged="category_selectionChanged"  Margin="39,380,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="addcatbutton" Content="Add" HorizontalAlignment="Left" Margin="39,638,0,0" VerticalAlignment="Top" Click="addCat_Clicked" Width="75" Height="20"/>
+        <Button x:Name="removecatbutton" Content="Remove" HorizontalAlignment="Left" Margin="127,638,0,0" VerticalAlignment="Top" Click="removeCat_Clicked" Width="75"/>
+        <ListBox x:Name="businesscatlist" HorizontalAlignment="Left" Height="100" Margin="39,663,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="searchbutton" Content="Search Businesses" HorizontalAlignment="Left" Margin="39,776,0,0" VerticalAlignment="Top" Width="163" Height="28" Click="Searchbutton_Click" />
+        <TextBox x:Name="reviewtext" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="68,406,0,0" TextWrapping="Wrap" Text="Review Text" VerticalAlignment="Top" Width="588"/>
+        <ComboBox x:Name="ratingdropdown" Grid.Column="1" HorizontalAlignment="Left" Margin="790,406,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="reviewRating_SelectionChanged"/>
+        <Label Content="Rating : " FontSize="14" Grid.Column="1" HorizontalAlignment="Left" Margin="686,406,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="addreview" Content="Add Review" Grid.Column="1" HorizontalAlignment="Left" Margin="686,458,0,0" Click="addReview_Clicked" VerticalAlignment="Top" Width="224" Height="45"/>
+        <Label Content="Review for this restaurant" FontSize="14" Grid.Column="1" HorizontalAlignment="Left" Margin="68,537,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="reviewlist" Grid.Column="1" HorizontalAlignment="Left" Height="225" Margin="68,570,0,0" VerticalAlignment="Top" Width="842"/>
+        <CheckBox x:Name="price1" Content="$" Grid.Column="1" HorizontalAlignment="Left" Margin="728,50,0,0" VerticalAlignment="Top" Checked="checkBox_Checked"/>
+        <CheckBox x:Name="price3" Content="$$$" Grid.Column="1" HorizontalAlignment="Left" Margin="790,47,0,0" VerticalAlignment="Top" Checked="price3_Checked"/>
+        <CheckBox x:Name="price2" Content="$$" Grid.Column="1" HorizontalAlignment="Left" Margin="728,71,0,0" VerticalAlignment="Top" Checked="price2_Checked"/>
+        <CheckBox x:Name="price4" Content="$$$$" Grid.Column="1" HorizontalAlignment="Left" Margin="790,70,0,0" VerticalAlignment="Top" Checked="price4_Checked"/>
+        <CheckBox x:Name="acceptsCreditCards" Content="Accepts Credit Cards" Grid.Column="1" HorizontalAlignment="Left" Margin="700,131,0,0" VerticalAlignment="Top" Checked="acceptsCreditCards_Checked"/>
+        <CheckBox x:Name="takesReservations" Content="Takes Reservations" Grid.Column="1" HorizontalAlignment="Left" Margin="700,151,0,0" VerticalAlignment="Top" Checked="takesReservations_Checked"/>
+        <CheckBox x:Name="wheelcharAccesible" Content="Wheelchair Accessible" Grid.Column="1" HorizontalAlignment="Left" Margin="700,171,0,0" VerticalAlignment="Top" Checked="wheelcharAccesible_Checked"/>
+        <CheckBox x:Name="outdoorSeating" Content="Outdoor Seating" Grid.Column="1" HorizontalAlignment="Left" Margin="700,194,0,0" VerticalAlignment="Top" Checked="outdoorSeating_Checked"/>
+        <CheckBox x:Name="goodForKids" Content="Good for Kids" Grid.Column="1" HorizontalAlignment="Left" Margin="700,214,0,0" VerticalAlignment="Top" Checked="goodForKids_Checked"/>
+        <CheckBox x:Name="goodForGroups" Content="Good for Groups" Grid.Column="1" HorizontalAlignment="Left" Margin="700,236,0,0" VerticalAlignment="Top" Checked="goodForGroups_Checked"/>
+        <CheckBox x:Name="delivery" Content="Delivery" Grid.Column="1" HorizontalAlignment="Left" Margin="700,256,0,0" VerticalAlignment="Top" Checked="delivery_Checked"/>
+        <CheckBox x:Name="takeOut" Content="Take Out" Grid.Column="1" HorizontalAlignment="Left" Margin="700,276,0,0" VerticalAlignment="Top" Checked="takeOut_Checked"/>
+        <CheckBox x:Name="freeWiFi" Content="Free Wi-Fi" Grid.Column="1" HorizontalAlignment="Left" Margin="700,296,0,0" VerticalAlignment="Top" Checked="freeWiFi_Checked"/>
+        <CheckBox x:Name="bikeParking" Content="Bike Parking" Grid.Column="1" HorizontalAlignment="Left" Margin="700,316,0,0" VerticalAlignment="Top" Checked="bikeParking_Checked"/>
+        <CheckBox x:Name="breakfast" Content="Breakfast" Grid.Column="1" HorizontalAlignment="Left" Margin="846,131,0,0" VerticalAlignment="Top" Checked="breakfast_Checked"/>
+        <CheckBox x:Name="brunch" Content="Brunch" Grid.Column="1" HorizontalAlignment="Left" Margin="846,151,0,0" VerticalAlignment="Top" Checked="brunch_Checked"/>
+        <CheckBox x:Name="lunch" Content="Lunch" Grid.Column="1" HorizontalAlignment="Left" Margin="846,174,0,0" VerticalAlignment="Top" Checked="lunch_Checked"/>
+        <CheckBox x:Name="dinner" Content="Dinner" Grid.Column="1" HorizontalAlignment="Left" Margin="846,194,0,0" VerticalAlignment="Top" Checked="dinner_Checked"/>
+        <CheckBox x:Name="dessert" Content="Dessert" Grid.Column="1" HorizontalAlignment="Left" Margin="846,214,0,0" VerticalAlignment="Top" Checked="dessert_Checked"/>
+        <CheckBox x:Name="lateNight" Content="Late Night" Grid.Column="1" HorizontalAlignment="Left" Margin="846,236,0,0" VerticalAlignment="Top" Checked="lateNight_Checked"/>
+        <Label x:Name="label" Content="Filter by Price:" Grid.Column="1" HorizontalAlignment="Left" Margin="686,24,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Filter by Attribute:" Grid.Column="1" HorizontalAlignment="Left" Margin="686,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Filter by Meal:" Grid.Column="1" HorizontalAlignment="Left" Margin="826,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="Sort Results By:" Grid.Column="1" HorizontalAlignment="Left" Margin="686,336,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="sortBy" Grid.Column="1" HorizontalAlignment="Left" Margin="700,362,0,0" VerticalAlignment="Top" Width="164" Height="13"/>
+        
+    </Grid>
+</Window>
